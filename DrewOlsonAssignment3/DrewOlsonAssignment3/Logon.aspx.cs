@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace DrewOlsonAssignment3
 {
@@ -11,7 +12,15 @@ namespace DrewOlsonAssignment3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+        }
 
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+            if(Login1_Authenticate.UserName == "abc" && Login1_Authenticate.Password == "123")
+            {
+                FormsAuthentication.redirectFromLoginPage(Login1_Authenticate.Username, true);
+            }
         }
     }
 }

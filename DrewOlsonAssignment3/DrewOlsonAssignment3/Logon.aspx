@@ -8,8 +8,6 @@
             <asp:Login ID="Login1" runat="server">
             </asp:Login>
         </td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
     </tr>
 </table>
 </asp:Content>
