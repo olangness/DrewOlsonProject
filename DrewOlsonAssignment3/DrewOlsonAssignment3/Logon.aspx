@@ -5,11 +5,14 @@
     <table style="width:100%;">
     <tr>
         <td>
+            <br />
+            <br />
             <asp:Login ID="Login1" runat="server">
             </asp:Login>
+            <br />
+            <br />
+            <br />
         </td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
     </tr>
 </table>
 </asp:Content>

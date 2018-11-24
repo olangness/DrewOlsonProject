@@ -30,11 +30,11 @@
                 </td>
                 <td class="auto-style2">Advisor Scheduling Service</td>
                 <td>
-                    <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
 &nbsp;&nbsp;
                     <asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink>
 &nbsp;&nbsp;
-                    <asp:HyperLink ID="HyperLink3" runat="server">HyperLink</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logon.aspx">Login</asp:HyperLink>
                 </td>
             </tr>
         </table>
