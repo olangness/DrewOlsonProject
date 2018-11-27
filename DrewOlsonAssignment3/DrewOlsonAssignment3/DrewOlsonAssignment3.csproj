@@ -75,12 +75,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AdvisingDatabase.mdf" />
+    <Content Include="App_Data\AdvisingDatabase_log.ldf">
+      <DependentUpon>AdvisingDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Databases\AdvisingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+      <LastGenOutput>AdvisingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Databases\AdvisingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+      <LastGenOutput>AdvisingModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Images\xt0x599W_400x400.jpg" />
     <Content Include="Logon.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Databases\AdvisingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\AdvisingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\AdvisingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +136,13 @@
   <ItemGroup>
     <Content Include="Mywork\Web.config" />
     <Content Include="MasterPage.Master" />
+    <EntityDeploy Include="Databases\AdvisingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdvisingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Databases\AdvisingModel.edmx.diagram">
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,6 +154,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
