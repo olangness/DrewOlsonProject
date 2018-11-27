@@ -7,7 +7,7 @@
         <td>
             <br />
             <br />
-            <asp:Login ID="Login1" runat="server">
+            <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
             </asp:Login>
             <br />
             <br />
