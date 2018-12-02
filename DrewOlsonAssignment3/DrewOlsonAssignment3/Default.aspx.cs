@@ -18,5 +18,49 @@ namespace DrewOlsonAssignment3
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            using (AdvisingDatabaseEntities dbcon = new AdvisingDatabaseEntities())
+            {
+                if (GridView1.SelectedDataKey.Value != null)
+                {
+                    // add data to the dbcon
+                    
+                    // select the row
+                    int item = Convert.ToInt32(
+                         GridView1.SelectedDataKey.Value.ToString());
+
+                    Message abc = (from x in dbcon.Messages
+                                   where x.MessageID == item
+                                   select x).First();
+                    //delete row from the table
+                    dbcon.Messages.Remove(abc);
+                    dbcon.SaveChanges();
+                }
+
+            }
+            GridView1.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            using (AdvisingDatabaseEntities dbcon =
+            new AdvisingDatabaseEntities())
+            {
+                Message abc = new Message();
+                abc.Date =
+                    DateTime.Now.ToShortDateString();
+                abc.Name = TextBox1.Text;
+                abc.Email = TextBox2.Text;
+                abc.Message1 = TextBox3.Text;
+                // add data to the table
+                dbcon.Messages.Add(abc);
+                dbcon.SaveChanges();
+            }
+            // show data in the GridView
+            GridView1.DataBind();
+
+        }
     }
 }

@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td class="auto-style3">
-                <asp:Button ID="Button1" runat="server" Text="ADD" />
+                <asp:Button ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" />
                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="Must Enter Name" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -50,7 +50,7 @@
         </tr>
         <tr>
             <td class="auto-style3">
-                <asp:Button ID="Button2" runat="server" Text="DELETE" />
+                <asp:Button ID="Button2" runat="server" Text="DELETE" OnClick="Button2_Click" />
             </td>
             <td class="auto-style4">&nbsp;</td>
             <td>&nbsp;</td>
