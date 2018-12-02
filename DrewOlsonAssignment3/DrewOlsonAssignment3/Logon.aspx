@@ -6,6 +6,7 @@
     <tr>
         <td>
             <br />
+            Log in using your username and password<br />
             <br />
             <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
             </asp:Login>
