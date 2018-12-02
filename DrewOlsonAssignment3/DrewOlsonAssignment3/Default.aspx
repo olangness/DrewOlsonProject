@@ -13,8 +13,17 @@
     <table style="width:100%;">
         <tr>
             <td class="auto-style3">
-                <asp:GridView ID="GridView1" runat="server">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="StudentID" DataSourceID="SqlDataSource2">
+                    <Columns>
+                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:BoundField DataField="StudentID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True" SortExpression="StudentID" />
+                        <asp:BoundField DataField="StudentLastName" HeaderText="StudentLastName" SortExpression="StudentLastName" />
+                        <asp:BoundField DataField="StudentFirstName" HeaderText="StudentFirstName" SortExpression="StudentFirstName" />
+                        <asp:BoundField DataField="StudentUserName" HeaderText="StudentUserName" SortExpression="StudentUserName" />
+                        <asp:BoundField DataField="StudentAdvisorID" HeaderText="StudentAdvisorID" SortExpression="StudentAdvisorID" />
+                    </Columns>
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AdvisingDatabaseConnectionString %>" SelectCommand="SELECT * FROM [StudentTable]"></asp:SqlDataSource>
             </td>
             <td class="auto-style4">&nbsp;</td>
             <td>&nbsp;</td>
