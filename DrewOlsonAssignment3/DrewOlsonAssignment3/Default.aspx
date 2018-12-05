@@ -13,16 +13,17 @@
     <table style="width:100%;">
         <tr>
             <td class="auto-style3">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="StudentID" DataSourceID="SqlDataSource2">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AppointmentID" DataSourceID="SqlDataSource1">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="StudentID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True" SortExpression="StudentID" />
-                        <asp:BoundField DataField="StudentLastName" HeaderText="StudentLastName" SortExpression="StudentLastName" />
-                        <asp:BoundField DataField="StudentFirstName" HeaderText="StudentFirstName" SortExpression="StudentFirstName" />
-                        <asp:BoundField DataField="StudentUserName" HeaderText="StudentUserName" SortExpression="StudentUserName" />
-                        <asp:BoundField DataField="StudentAdvisorID" HeaderText="StudentAdvisorID" SortExpression="StudentAdvisorID" />
+                        <asp:BoundField DataField="AppointmentID" HeaderText="AppointmentID" InsertVisible="False" ReadOnly="True" SortExpression="AppointmentID" />
+                        <asp:BoundField DataField="AppointmentTime" HeaderText="AppointmentTime" SortExpression="AppointmentTime" />
+                        <asp:BoundField DataField="AppointmentDate" HeaderText="AppointmentDate" SortExpression="AppointmentDate" />
+                        <asp:BoundField DataField="AppointmentReason" HeaderText="AppointmentReason" SortExpression="AppointmentReason" />
+                        <asp:BoundField DataField="AdvisorID" HeaderText="AdvisorID" SortExpression="AdvisorID" />
+                        <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" />
                     </Columns>
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [AppointmentTable]"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AdvisingDatabaseConnectionString %>" SelectCommand="SELECT * FROM [StudentTable]"></asp:SqlDataSource>
             </td>
             <td class="auto-style4">&nbsp;</td>

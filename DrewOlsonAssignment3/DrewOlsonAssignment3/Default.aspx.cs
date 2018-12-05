@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,7 +22,7 @@ namespace DrewOlsonAssignment3
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            using (AdvisingDatabaseEntities dbcon = new AdvisingDatabaseEntities())
+            using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
             {
                 if (GridView1.SelectedDataKey.Value != null)
                 {
@@ -31,11 +32,11 @@ namespace DrewOlsonAssignment3
                     int item = Convert.ToInt32(
                          GridView1.SelectedDataKey.Value.ToString());
 
-                    Message abc = (from x in dbcon.Messages
-                                   where x.MessageID == item
-                                   select x).First();
+                   // Message abc = (from x in dbcon.Messages
+                 //                  where x.MessageID == item
+                   //                select x).First();
                     //delete row from the table
-                    dbcon.Messages.Remove(abc);
+                   // dbcon.Messages.Remove(abc);
                     dbcon.SaveChanges();
                 }
 
@@ -45,17 +46,17 @@ namespace DrewOlsonAssignment3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            using (AdvisingDatabaseEntities dbcon =
-            new AdvisingDatabaseEntities())
+            using (AdvisingDatabaseEntities1 dbcon =
+            new AdvisingDatabaseEntities1())
             {
                 Message abc = new Message();
-                abc.Date =
+             //   abc.Date =
                     DateTime.Now.ToShortDateString();
-                abc.Name = TextBox1.Text;
-                abc.Email = TextBox2.Text;
-                abc.Message1 = TextBox3.Text;
+            //    abc.Name = TextBox1.Text;
+            //    abc.Email = TextBox2.Text;
+            //    abc.Message1 = TextBox3.Text;
                 // add data to the table
-                dbcon.Messages.Add(abc);
+             //   dbcon.Messages.Add(abc);
                 dbcon.SaveChanges();
             }
             // show data in the GridView

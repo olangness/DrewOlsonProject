@@ -50,6 +50,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -75,6 +76,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdvisingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+      <LastGenOutput>AdvisingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdvisingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+      <LastGenOutput>AdvisingModel.cs</LastGenOutput>
+    </Content>
     <Content Include="App_Data\AdvisingDatabase.mdf" />
     <Content Include="App_Data\AdvisingDatabase_log.ldf">
       <DependentUpon>AdvisingDatabase.mdf</DependentUpon>
@@ -95,6 +106,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvisingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvisingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvisingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AdvisorTable.cs">
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentTable.cs">
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Databases\AdvisingModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +164,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentTable.cs">
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTable.cs">
+      <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mywork\Web.config" />
@@ -141,6 +179,13 @@
       <LastGenOutput>AdvisingModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Databases\AdvisingModel.edmx.diagram">
+      <DependentUpon>AdvisingModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="AdvisingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdvisingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AdvisingModel.edmx.diagram">
       <DependentUpon>AdvisingModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />

@@ -10,17 +10,16 @@ namespace DrewOlsonAssignment3
 {
     public partial class Logon : System.Web.UI.Page
     {
+        AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+            Label1.Text = dbcon.UserTables.Count().ToString();
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            if (Login1.UserName == "abc" && Login1.Password == "123")
-            {
-                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-            }
+            
         }
     }
 }

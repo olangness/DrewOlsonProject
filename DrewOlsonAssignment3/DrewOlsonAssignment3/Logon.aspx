@@ -11,6 +11,7 @@
             <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
             </asp:Login>
             <br />
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <br />
             <br />
         </td>
