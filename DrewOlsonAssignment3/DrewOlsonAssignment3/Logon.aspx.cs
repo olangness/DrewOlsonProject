@@ -19,7 +19,18 @@ namespace DrewOlsonAssignment3
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            
+            var username = from x in dbcon.UserTables
+                           where x.UserName.Equals(Login1.UserName)
+                           select x;
+
+            if (username != null)
+            {
+                Label1.Text = "You made it in brother";
+            }
+            else
+            {
+                Label1.Text = "access denied";
+            }
         }
     }
 }
