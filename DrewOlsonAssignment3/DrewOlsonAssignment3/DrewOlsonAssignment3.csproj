@@ -86,7 +86,9 @@
       <DependentUpon>AdvisingModel.edmx</DependentUpon>
       <LastGenOutput>AdvisingModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Advisor\AdvisorEmail.aspx" />
     <Content Include="Advisor\AdvisorHome.aspx" />
+    <Content Include="Advisor\AdvisorScheduling.aspx" />
     <Content Include="App_Data\AdvisingDatabase.mdf" />
     <Content Include="App_Data\AdvisingDatabase_log.ldf">
       <DependentUpon>AdvisingDatabase.mdf</DependentUpon>
@@ -105,7 +107,9 @@
     <Content Include="Images\xt0x599W_400x400.jpg" />
     <Content Include="Logon.aspx" />
     <Content Include="RedirectPage.aspx" />
+    <Content Include="Student\StudentEmail.aspx" />
     <Content Include="Student\StudentHome.aspx" />
+    <Content Include="Student\StudentScheduling.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +131,26 @@
     <Compile Include="AdvisorTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Advisor\AdvisorEmail.aspx.cs">
+      <DependentUpon>AdvisorEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Advisor\AdvisorEmail.aspx.designer.cs">
+      <DependentUpon>AdvisorEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Advisor\AdvisorHome.aspx.cs">
       <DependentUpon>AdvisorHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Advisor\AdvisorHome.aspx.designer.cs">
       <DependentUpon>AdvisorHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\AdvisorScheduling.aspx.cs">
+      <DependentUpon>AdvisorScheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Advisor\AdvisorScheduling.aspx.designer.cs">
+      <DependentUpon>AdvisorScheduling.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppointmentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
@@ -184,12 +202,26 @@
     <Compile Include="StudentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Student\StudentEmail.aspx.cs">
+      <DependentUpon>StudentEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentEmail.aspx.designer.cs">
+      <DependentUpon>StudentEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentHome.aspx.cs">
       <DependentUpon>StudentHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student\StudentHome.aspx.designer.cs">
       <DependentUpon>StudentHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentScheduling.aspx.cs">
+      <DependentUpon>StudentScheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentScheduling.aspx.designer.cs">
+      <DependentUpon>StudentScheduling.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
