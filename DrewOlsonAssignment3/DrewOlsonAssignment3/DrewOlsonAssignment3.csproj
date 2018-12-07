@@ -86,6 +86,7 @@
       <DependentUpon>AdvisingModel.edmx</DependentUpon>
       <LastGenOutput>AdvisingModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Advisor\AdvisorHome.aspx" />
     <Content Include="App_Data\AdvisingDatabase.mdf" />
     <Content Include="App_Data\AdvisingDatabase_log.ldf">
       <DependentUpon>AdvisingDatabase.mdf</DependentUpon>
@@ -103,6 +104,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Images\xt0x599W_400x400.jpg" />
     <Content Include="Logon.aspx" />
+    <Content Include="RedirectPage.aspx" />
+    <Content Include="Student\StudentHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +126,13 @@
     </Compile>
     <Compile Include="AdvisorTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\AdvisorHome.aspx.cs">
+      <DependentUpon>AdvisorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Advisor\AdvisorHome.aspx.designer.cs">
+      <DependentUpon>AdvisorHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppointmentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
@@ -164,8 +174,22 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedirectPage.aspx.cs">
+      <DependentUpon>RedirectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RedirectPage.aspx.designer.cs">
+      <DependentUpon>RedirectPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentHome.aspx.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentHome.aspx.designer.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
@@ -199,10 +223,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Advisor\" />
-    <Folder Include="Student\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

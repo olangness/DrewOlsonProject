@@ -19,13 +19,22 @@ namespace DrewOlsonAssignment3
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
+            //getting the username from the database
             var username = from x in dbcon.UserTables
                            where x.UserName.Equals(Login1.UserName)
                            select x;
 
-            if (username != null)
+            //checking username and password, adds username to the session, and authenticates the user
+            if (username.Count() != 0)
             {
-                Label1.Text = "You made it in brother";
+                Label1.Text = username.First().UserRole;
+                if (username.First().UserPassword.Equals(Login1.Password))
+                {
+                    Session["UserName"] = username.First().UserName;
+                    Session["UserRole"] = username.First().UserRole;
+                    e.Authenticated = true;
+                }
+                
             }
             else
             {
