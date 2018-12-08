@@ -11,6 +11,22 @@ namespace DrewOlsonAssignment3.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1();
+            string queryUserName = Session["UserName"].ToString();
+            var user = (from x in dbcon.StudentTables
+                        where x.StudentUserName.Equals(queryUserName)
+                        select x).First();
+
+            Label1.Text = user.StudentFirstName.ToString() + ", ";
+
+            queryUserName = user.StudentAdvisorUserName;
+            var advisor = (from x in dbcon.AdvisorTables
+                            where x.AdvisorUserName.Equals(queryUserName)
+                            select x).First();
+
+            //studentInfo = studentInfo +  + "\r\n";
+
+            Label2.Text = advisor.AdvisorFirstName + " " + advisor.AdvisorLastName + " - " + advisor.AdvisorOfficeLocation;
 
         }
     }

@@ -9,5 +9,9 @@
     <p>
         &nbsp;</p>
     <p>
-        &nbsp;</p>
+        Your students are:
+    </p>
+    <p>
+        <asp:ListBox ID="ListBox1" runat="server" Height="236px" Width="1019px"></asp:ListBox>
+    </p>
 </asp:Content>
