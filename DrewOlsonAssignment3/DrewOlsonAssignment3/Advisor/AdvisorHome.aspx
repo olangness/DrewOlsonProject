@@ -3,5 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
-        Welcome home, Advisor</p>
+        Welcome back, 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
 </asp:Content>
