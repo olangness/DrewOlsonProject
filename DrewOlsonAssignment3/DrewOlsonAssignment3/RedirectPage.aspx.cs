@@ -15,6 +15,7 @@ namespace DrewOlsonAssignment3
         {
             if (Session["UserRole"].Equals("Student"))
             {
+                
                 Response.Redirect("~/Student/StudentHome.aspx");
             }
             else

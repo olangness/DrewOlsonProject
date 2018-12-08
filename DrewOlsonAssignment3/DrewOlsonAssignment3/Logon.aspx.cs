@@ -10,7 +10,9 @@ namespace DrewOlsonAssignment3
 {
     public partial class Logon : System.Web.UI.Page
     {
+        //the database entities 
         AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
