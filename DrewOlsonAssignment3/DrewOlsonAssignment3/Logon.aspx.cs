@@ -14,7 +14,7 @@ namespace DrewOlsonAssignment3
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-            Label1.Text = dbcon.UserTables.Count().ToString();
+           
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
