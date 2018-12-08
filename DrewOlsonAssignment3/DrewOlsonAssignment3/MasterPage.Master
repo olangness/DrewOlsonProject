@@ -9,11 +9,11 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style1 {
-            width: 370px;
+            width: 299px;
         }
         .auto-style2 {
             font-size: x-large;
-            width: 718px;
+            width: 403px;
         }
     </style>
 </head>
@@ -26,13 +26,13 @@
         <table style="width:100%;">
             <tr>
                 <td class="auto-style1">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/xt0x599W_400x400.jpg" Height="254px" Width="233px" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/xt0x599W_400x400.jpg" Height="254px" Width="287px" />
                 </td>
-                <td class="auto-style2">Advisor Scheduling Service</td>
+                <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Advisor Scheduling Service</td>
                 <td>
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
 &nbsp;&nbsp;
-                    <asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Student/StudentScheduling.aspx">Schedule Meeting</asp:HyperLink>
 &nbsp;&nbsp;
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logon.aspx">Login</asp:HyperLink>
                 </td>

@@ -93,6 +93,7 @@
     <Content Include="App_Data\AdvisingDatabase_log.ldf">
       <DependentUpon>AdvisingDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Confirmation.aspx" />
     <Content Include="Databases\AdvisingModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AdvisingModel.edmx</DependentUpon>
@@ -154,6 +155,13 @@
     </Compile>
     <Compile Include="AppointmentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Databases\AdvisingModel.Context.cs">
       <AutoGen>True</AutoGen>
