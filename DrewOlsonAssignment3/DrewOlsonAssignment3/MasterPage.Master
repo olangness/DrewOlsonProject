@@ -19,7 +19,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH<br />
+        <br />
         <br />
         <br />
         <br />
@@ -44,7 +44,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        
     </form>
 </body>
 </html>

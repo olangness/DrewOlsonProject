@@ -22,7 +22,11 @@ namespace DrewOlsonAssignment3
                 }
             }
             ListBox1.Items.Add("________________________________");
-            ListBox1.Items.Add("Total " + total.ToString("c"));
+        }
+
+        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

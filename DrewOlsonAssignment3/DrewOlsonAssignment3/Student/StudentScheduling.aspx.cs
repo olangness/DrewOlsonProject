@@ -28,5 +28,10 @@ namespace DrewOlsonAssignment3.Student
             Session.Add(item, price);
 
         }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
