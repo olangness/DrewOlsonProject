@@ -13,9 +13,6 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Student/StudentHome.aspx">Student Home</asp:HyperLink>
         </div>
     </form>

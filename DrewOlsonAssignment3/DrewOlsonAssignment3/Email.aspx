@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
     .auto-style3 {
-        width: 78px;
+        width: 131px;
     }
 </style>
 </asp:Content>
@@ -10,6 +10,21 @@
     <p>
     <br />
     <table style="width:100%;">
+        <tr>
+            <td class="auto-style3">
+                Send To<br />
+                first.last@ndsu.edu:</td>
+            <td>
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style3">
+                Email Subject:</td>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server" Width="284px"></asp:TextBox>
+            </td>
+        </tr>
         <tr>
             <td class="auto-style3">
                 <asp:Label ID="Label1" runat="server" Text="Email Body:"></asp:Label>

@@ -39,5 +39,10 @@ namespace DrewOlsonAssignment3
                 Response.Redirect("~/Advisor/AdvisorScheduling.aspx");
             }
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Email.aspx");
+        }
     }
 }
