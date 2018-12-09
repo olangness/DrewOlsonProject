@@ -35,6 +35,7 @@
                     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Schedule Meeting" Width="120px" />
 &nbsp;&nbsp;
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logon.aspx">Login</asp:HyperLink>
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Email" />
                 </td>
             </tr>
         </table>
