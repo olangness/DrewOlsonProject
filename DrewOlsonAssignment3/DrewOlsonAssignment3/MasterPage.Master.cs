@@ -13,5 +13,31 @@ namespace DrewOlsonAssignment3
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (Session["UserRole"].Equals("Student"))
+            {
+
+                Response.Redirect("~/Student/StudentHome.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Advisor/AdvisorHome.aspx");
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (Session["UserRole"].Equals("Student"))
+            {
+
+                Response.Redirect("~/Student/StudentScheduling.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Advisor/AdvisorScheduling.aspx");
+            }
+        }
     }
 }

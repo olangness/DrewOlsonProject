@@ -30,9 +30,9 @@
                 </td>
                 <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Advisor Scheduling Service</td>
                 <td>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Home" />
 &nbsp;&nbsp;
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Student/StudentScheduling.aspx">Schedule Meeting</asp:HyperLink>
+                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Schedule Meeting" Width="120px" />
 &nbsp;&nbsp;
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logon.aspx">Login</asp:HyperLink>
                 </td>

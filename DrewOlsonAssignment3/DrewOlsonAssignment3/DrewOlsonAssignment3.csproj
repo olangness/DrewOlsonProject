@@ -105,8 +105,10 @@
       <LastGenOutput>AdvisingModel.cs</LastGenOutput>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="Email.aspx" />
     <Content Include="Images\xt0x599W_400x400.jpg" />
     <Content Include="Logon.aspx" />
+    <Content Include="MailSender.aspx" />
     <Content Include="RedirectPage.aspx" />
     <Content Include="Student\StudentEmail.aspx" />
     <Content Include="Student\StudentHome.aspx" />
@@ -185,12 +187,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logon.aspx.cs">
       <DependentUpon>Logon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Logon.aspx.designer.cs">
       <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MailSender.aspx.cs">
+      <DependentUpon>MailSender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MailSender.aspx.designer.cs">
+      <DependentUpon>MailSender.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
