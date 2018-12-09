@@ -7,8 +7,7 @@
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
-        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Student/StudentScheduling.aspx">HyperLink</asp:HyperLink>
-    </p>
+        &nbsp;</p>
     <p>
         Your advisor is:</p>
     <p>

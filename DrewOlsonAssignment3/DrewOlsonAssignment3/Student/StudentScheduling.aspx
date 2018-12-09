@@ -12,8 +12,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
     <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AppointmentID" DataSourceID="AppointmentSourceStudent">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AppointmentID" DataSourceID="AppointmentSourceStudent" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="AppointmentID" HeaderText="AppointmentID" InsertVisible="False" ReadOnly="True" SortExpression="AppointmentID" />
                 <asp:BoundField DataField="AppointmentTime" HeaderText="AppointmentTime" SortExpression="AppointmentTime" />
                 <asp:BoundField DataField="AppointmentDate" HeaderText="AppointmentDate" SortExpression="AppointmentDate" />
@@ -21,8 +22,22 @@
                 <asp:BoundField DataField="AdvisorUserName" HeaderText="AdvisorUserName" SortExpression="AdvisorUserName" />
                 <asp:BoundField DataField="StudentUserName" HeaderText="StudentUserName" SortExpression="StudentUserName" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <asp:SqlDataSource ID="AppointmentSourceStudent" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [AppointmentTable]"></asp:SqlDataSource>
+</p>
+    <p>
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Remove Selected Appointment" />
+</p>
+    <p>
     <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" OnSelectionChanged="Calendar1_SelectionChanged">
         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
@@ -32,6 +47,13 @@
         <TodayDayStyle BackColor="#CCCCCC" />
     </asp:Calendar>
 </p>
+    <p>
+        &nbsp;</p>
+    <p>
+        Reason:</p>
+    <p>
+        <asp:TextBox ID="TextBox3" runat="server" Width="1177px"></asp:TextBox>
+    </p>
     <p>
         &nbsp;</p>
     <p>
