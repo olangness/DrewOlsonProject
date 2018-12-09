@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,24 +13,78 @@ namespace DrewOlsonAssignment3.Student
         AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var username = from x in dbcon.AppointmentTables
-                          // where x.UserName.Equals(Login1.UserName)
-                           select x;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string item = GridView1.SelectedDataKey[0] +
-            " ; " + GridView1.SelectedDataKey[1];
-            string price = GridView1.SelectedDataKey[2].ToString();
+            using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
+            {
+                //retrieve the database results
+                string queryUserName = Session["UserName"].ToString();
+                var user = (from x in dbcon.StudentTables
+                            where x.StudentUserName.Equals(queryUserName)
+                            select x).First();
 
-            // add data to the session 
-            Session.Add(item, price);
+                //make new table and add it to the real database
+                AppointmentTable table = new AppointmentTable();
+                table.StudentUserName = user.StudentUserName;
+                table.AdvisorUserName = user.StudentAdvisorUserName;
+                table.AppointmentReason = TextBox3.Text;
+                table.AppointmentDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
+                table.AppointmentTime = TextBox1.Text + ":" + TextBox2.Text;
+
+                dbcon.AppointmentTables.Add(table);
+                
+
+
+
+
+
+                
+                dbcon.SaveChanges();
+            }
+            // show data in the GridView
+            GridView1.DataBind();
+
 
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+
+        }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //remove appointment
+            using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
+            {
+            
+
+                //make new table and add it to the real database
+                int item = Convert.ToInt32(
+                     GridView1.SelectedDataKey.Value.ToString());
+
+                var toRemove = (from x in dbcon.AppointmentTables
+                               where x.AppointmentID == item
+                               select x).First();
+
+
+
+
+                dbcon.AppointmentTables.Remove(toRemove);
+
+
+                dbcon.SaveChanges();
+            }
+            // show data in the GridView
+            GridView1.DataBind();
 
         }
     }

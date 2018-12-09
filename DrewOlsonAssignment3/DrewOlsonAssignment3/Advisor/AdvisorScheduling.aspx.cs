@@ -13,5 +13,90 @@ namespace DrewOlsonAssignment3.Advisor
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
+            {
+                //retrieve the database results
+                string queryUserName = Session["UserName"].ToString();
+                var student = (from x in dbcon.StudentTables
+                            where x.StudentAdvisorUserName.Equals(queryUserName)
+                            select x).First();
+
+                //make new table and add it to the real database
+                AppointmentTable table = new AppointmentTable();
+                table.StudentUserName = student.StudentUserName;
+                table.AdvisorUserName = student.StudentAdvisorUserName;
+                table.AppointmentReason = TextBox3.Text;
+                table.AppointmentDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
+                table.AppointmentTime = TextBox1.Text + ":" + TextBox2.Text;
+
+                dbcon.AppointmentTables.Add(table);
+
+
+
+
+
+
+
+                dbcon.SaveChanges();
+            }
+            // show data in the GridView
+            GridView1.DataBind();
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //remove appointment
+            using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
+            {
+
+
+                //make new table and add it to the real database
+                int item = Convert.ToInt32(
+                     GridView1.SelectedDataKey.Value.ToString());
+
+                var toRemove = (from x in dbcon.AppointmentTables
+                                where x.AppointmentID == item
+                                select x).First();
+
+
+
+
+                dbcon.AppointmentTables.Remove(toRemove);
+
+
+                dbcon.SaveChanges();
+            }
+            // show data in the GridView
+            GridView1.DataBind();
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
