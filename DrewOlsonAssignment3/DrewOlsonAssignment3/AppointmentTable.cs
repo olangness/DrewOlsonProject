@@ -18,7 +18,7 @@ namespace DrewOlsonAssignment3
         public string AppointmentTime { get; set; }
         public System.DateTime AppointmentDate { get; set; }
         public string AppointmentReason { get; set; }
-        public int AdvisorID { get; set; }
-        public int StudentID { get; set; }
+        public string AdvisorUserName { get; set; }
+        public string StudentUserName { get; set; }
     }
 }
