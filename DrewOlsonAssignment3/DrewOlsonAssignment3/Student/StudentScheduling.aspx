@@ -15,7 +15,6 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AppointmentID" DataSourceID="AppointmentSourceStudent" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="AppointmentID" HeaderText="AppointmentID" InsertVisible="False" ReadOnly="True" SortExpression="AppointmentID" />
                 <asp:BoundField DataField="AppointmentTime" HeaderText="AppointmentTime" SortExpression="AppointmentTime" />
                 <asp:BoundField DataField="AppointmentDate" HeaderText="AppointmentDate" SortExpression="AppointmentDate" />
                 <asp:BoundField DataField="AppointmentReason" HeaderText="AppointmentReason" SortExpression="AppointmentReason" />
@@ -32,7 +31,11 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        <asp:SqlDataSource ID="AppointmentSourceStudent" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [AppointmentTable]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="AppointmentSourceStudent" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [AppointmentTable] WHERE ([StudentUserName] = @StudentUserName)">
+            <SelectParameters>
+                <asp:SessionParameter Name="StudentUserName" SessionField="UserName" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 </p>
     <p>
         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Remove Selected Appointment" />
