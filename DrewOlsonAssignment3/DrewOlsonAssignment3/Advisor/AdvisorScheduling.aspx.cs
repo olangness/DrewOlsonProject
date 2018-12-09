@@ -31,7 +31,7 @@ namespace DrewOlsonAssignment3.Advisor
                 table.AdvisorUserName = student.StudentAdvisorUserName;
                 table.AppointmentReason = TextBox3.Text;
                 table.AppointmentDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
-                table.AppointmentTime = TextBox1.Text + ":" + TextBox2.Text;
+                table.AppointmentTime = TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
                 dbcon.AppointmentTables.Add(table);
 
