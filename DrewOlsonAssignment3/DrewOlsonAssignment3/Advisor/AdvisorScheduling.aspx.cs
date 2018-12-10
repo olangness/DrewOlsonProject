@@ -47,11 +47,11 @@ namespace DrewOlsonAssignment3.Advisor
                 else
                     Label1.Text = "Choose a different time.";
 
-                Label1.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                Label1.Text = "You have a new appointment with your student " + TextBox4.Text + " at "
                      + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
 
-                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                MailSender.CreateMessage(TextBox4.Text + "@ndsu.edu", "New appointment added", "You have a new appointment with your student " + TextBox4.Text + " at "
                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
 
                 dbcon.SaveChanges();
