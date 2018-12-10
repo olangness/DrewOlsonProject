@@ -35,8 +35,8 @@ namespace DrewOlsonAssignment3.Advisor
 
                 dbcon.AppointmentTables.Add(table);
 
-
-
+                Label1.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
 
                 MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
