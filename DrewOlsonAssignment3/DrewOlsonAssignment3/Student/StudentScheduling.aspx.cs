@@ -48,7 +48,7 @@ namespace DrewOlsonAssignment3.Student
                 
                 dbcon.SaveChanges();
 
-                StateLabel.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                StateLabel.Text = "You have a new appointment with your advisor at "
                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
 
