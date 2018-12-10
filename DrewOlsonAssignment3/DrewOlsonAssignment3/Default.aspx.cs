@@ -30,13 +30,7 @@ namespace DrewOlsonAssignment3
                     
                     // select the row
                     int item = Convert.ToInt32(
-                         GridView1.SelectedDataKey.Value.ToString());
-
-                   // Message abc = (from x in dbcon.Messages
-                 //                  where x.MessageID == item
-                   //                select x).First();
-                    //delete row from the table
-                   // dbcon.Messages.Remove(abc);
+                    GridView1.SelectedDataKey.Value.ToString());
                     dbcon.SaveChanges();
                 }
 
