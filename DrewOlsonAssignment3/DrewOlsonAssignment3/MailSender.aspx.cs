@@ -19,6 +19,7 @@ namespace DrewOlsonAssignment3
 
         public static string CreateMessage(string username, string sbjt, string msg)
         {
+            // creates new mail message with designated email address below
             MailMessage mail = new MailMessage("ndsuadvisingalert@gmail.com", username);
             SmtpClient client = new SmtpClient();
 
@@ -32,6 +33,7 @@ namespace DrewOlsonAssignment3
             mail.Body = msg;
             mail.Subject = sbjt;
 
+            //try catch block to report if email was successfully sent
             try { client.Send(mail); }
             catch (SmtpFailedRecipientException e) { return "Failure"; }
 

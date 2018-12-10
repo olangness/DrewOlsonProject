@@ -16,7 +16,8 @@ namespace DrewOlsonAssignment3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Label2.Text = MailSender.CreateMessage(TextBox3.Text ,TextBox2.Text, TextBox1.Text);// email server for Gmail - smtp.gmail.com
+            // email server for Gmail - smtp.gmail.com
+            Label2.Text = MailSender.CreateMessage(TextBox3.Text ,TextBox2.Text, TextBox1.Text);
            
         }
     }
