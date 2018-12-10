@@ -17,7 +17,7 @@ namespace DrewOlsonAssignment3
             
         }
 
-        public static void CreateTestMessage(string username, string sbjt, string msg)
+        public static string CreateMessage(string username, string sbjt, string msg)
         {
             MailMessage mail = new MailMessage("ndsuadvisingalert@gmail.com", username);
             SmtpClient client = new SmtpClient();
@@ -31,7 +31,13 @@ namespace DrewOlsonAssignment3
             client.Host = "smtp.gmail.com";
             mail.Body = msg;
             mail.Subject = sbjt;
-            client.Send(mail);
+
+            try { client.Send(mail); }
+            catch (SmtpFailedRecipientException e) { return "Failure"; }
+
+
+            return "Success";
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)

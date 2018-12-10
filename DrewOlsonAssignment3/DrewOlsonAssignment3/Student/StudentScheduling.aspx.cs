@@ -47,6 +47,10 @@ namespace DrewOlsonAssignment3.Student
                     Label1.Text = "Choose a different time.";
                 
                 dbcon.SaveChanges();
+
+
+                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your advisor on"
+                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
             }
             // show data in the GridView
             GridView1.DataBind();
@@ -69,15 +73,15 @@ namespace DrewOlsonAssignment3.Student
             //remove appointment
             using (AdvisingDatabaseEntities1 dbcon = new AdvisingDatabaseEntities1())
             {
-            
+
 
                 //make new table and add it to the real database
                 int item = Convert.ToInt32(
                      GridView1.SelectedDataKey.Value.ToString());
 
                 var toRemove = (from x in dbcon.AppointmentTables
-                               where x.AppointmentID == item
-                               select x).First();
+                                where x.AppointmentID == item
+                                select x).First();
 
 
 
@@ -86,6 +90,9 @@ namespace DrewOlsonAssignment3.Student
 
 
                 dbcon.SaveChanges();
+
+                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "Appointment cancelled", "You have cancelled an appointment with your advisor on"
+                   + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
             }
             // show data in the GridView
             GridView1.DataBind();

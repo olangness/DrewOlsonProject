@@ -16,6 +16,7 @@
                 first.last@ndsu.edu:</td>
             <td>
                 <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            &nbsp;<asp:Label ID="Label2" runat="server" Text=" "></asp:Label>
             </td>
         </tr>
         <tr>
@@ -32,6 +33,9 @@
             <td>
                 <asp:TextBox ID="TextBox1" runat="server" Height="133px" Width="288px"></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" Height="81px" OnClick="Button1_Click" Text="Send Email" Width="115px" />
+                <br />
+                <br />
+                <br />
             </td>
         </tr>
     </table>

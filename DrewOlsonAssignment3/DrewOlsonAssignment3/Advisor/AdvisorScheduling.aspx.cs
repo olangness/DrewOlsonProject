@@ -22,8 +22,8 @@ namespace DrewOlsonAssignment3.Advisor
                 //retrieve the database results
                 string queryUserName = Session["UserName"].ToString();
                 var student = (from x in dbcon.StudentTables
-                            where x.StudentAdvisorUserName.Equals(queryUserName)
-                            select x).First();
+                               where x.StudentAdvisorUserName.Equals(queryUserName)
+                               select x).First();
 
                 //make new table and add it to the real database
                 AppointmentTable table = new AppointmentTable();
@@ -35,11 +35,12 @@ namespace DrewOlsonAssignment3.Advisor
 
                 dbcon.AppointmentTables.Add(table);
 
+                Label1.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
 
-
-
-
+                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
 
                 dbcon.SaveChanges();
             }
@@ -69,9 +70,14 @@ namespace DrewOlsonAssignment3.Advisor
 
 
                 dbcon.SaveChanges();
+
+                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "Appointment cancelled", "You have cancelled an appointment with your  student " + toRemove.StudentUserName + " at "
+       + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
             }
             // show data in the GridView
             GridView1.DataBind();
+
+
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
