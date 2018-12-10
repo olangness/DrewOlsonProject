@@ -86,7 +86,6 @@
       <DependentUpon>AdvisingModel.edmx</DependentUpon>
       <LastGenOutput>AdvisingModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Advisor\AdvisorEmail.aspx" />
     <Content Include="Advisor\AdvisorHome.aspx" />
     <Content Include="Advisor\AdvisorScheduling.aspx" />
     <Content Include="App_Data\AdvisingDatabase.mdf" />
@@ -110,7 +109,6 @@
     <Content Include="Logon.aspx" />
     <Content Include="MailSender.aspx" />
     <Content Include="RedirectPage.aspx" />
-    <Content Include="Student\StudentEmail.aspx" />
     <Content Include="Student\StudentHome.aspx" />
     <Content Include="Student\StudentScheduling.aspx" />
     <Content Include="Web.config" />
@@ -133,13 +131,6 @@
     </Compile>
     <Compile Include="AdvisorTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Advisor\AdvisorEmail.aspx.cs">
-      <DependentUpon>AdvisorEmail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Advisor\AdvisorEmail.aspx.designer.cs">
-      <DependentUpon>AdvisorEmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Advisor\AdvisorHome.aspx.cs">
       <DependentUpon>AdvisorHome.aspx</DependentUpon>
@@ -225,13 +216,6 @@
     </Compile>
     <Compile Include="StudentTable.cs">
       <DependentUpon>AdvisingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student\StudentEmail.aspx.cs">
-      <DependentUpon>StudentEmail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Student\StudentEmail.aspx.designer.cs">
-      <DependentUpon>StudentEmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\StudentHome.aspx.cs">
       <DependentUpon>StudentHome.aspx</DependentUpon>

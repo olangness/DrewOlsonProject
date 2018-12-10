@@ -17,39 +17,21 @@ namespace DrewOlsonAssignment3
             
         }
 
-        public static void CreateTestMessage(string server, string username, string sbjt, string msg)
+        public static void CreateTestMessage(string username, string sbjt, string msg)
         {
-            //MailMessage mail = new MailMessage();
-            //mail.Subject = "Student Advising Meeting";
-            //mail.From = new MailAddress("ndsuadvisingalert@gmailcom");// add your gmail account
-            //mail.To.Add("ndsuadvisingalert@gmailcom");// add your gmail account
-            //mail.Body = msg;
-            //mail.IsBodyHtml = true;
 
-            //SmtpClient smtp = new SmtpClient(server, 587);
-            //smtp.EnableSsl = true;
-            //NetworkCredential netCre = new NetworkCredential("ndsuadvisingalert@gmailcom", "add your password -for your email");
-            //smtp.Credentials = netCre;
-
-            //try
-            //{
-            //    smtp.Send(mail);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-
-            MailMessage mail = new MailMessage("ndsuadvisingalert@gmailcom", username);
+            MailMessage mail = new MailMessage("ndsuadvisingalert@gmail.com", username);
             SmtpClient client = new SmtpClient();
+
             client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
+            client.EnableSsl = true;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.Credentials = new System.Net.NetworkCredential("ndsuadvisingalert@gmail.com", "drewolson123");
+
             client.Host = "smtp.gmail.com";
-            mail.Subject = sbjt;
             mail.Body = msg;
-            SmtpClient smtp = new SmtpClient(server, 587);
-            smtp.EnableSsl = true;
+            mail.Subject = sbjt;
             client.Send(mail);
         }
 
