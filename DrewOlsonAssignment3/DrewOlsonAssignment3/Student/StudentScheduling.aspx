@@ -81,13 +81,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style3">
-                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Confirmation.aspx">Confirmation</asp:HyperLink>
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
             <td class="auto-style3">&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
