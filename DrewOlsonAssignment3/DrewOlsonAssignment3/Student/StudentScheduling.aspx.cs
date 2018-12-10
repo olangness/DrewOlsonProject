@@ -34,26 +34,36 @@ namespace DrewOlsonAssignment3.Student
                 table.AppointmentDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
                 table.AppointmentTime = TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
+                string proposedDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
+
                 string queryTable = Session["UserName"].ToString();
                 var tbl = (from x in dbcon.AppointmentTables
-                            where x.AppointmentDate.Equals(Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")))
-                            && x.AppointmentTime.Equals(TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue)
+                            where x.AppointmentDate.Equals(proposedDate)
                             select x);
+
                 if (tbl.Count() == 0)
                 {
                     dbcon.AppointmentTables.Add(table);
+
+                    StateLabel.Text = "You have a new appointment with your advisor at "
+                   + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue + ". Reason: " + TextBox3.Text;
+
+
+                    MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your advisor on"
+                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue + ". Reason: " + TextBox3.Text);
+
                 }
                 else
+                {
                     StateLabel.Text = "Choose a different time.";
+                }
+                    
                 
                 dbcon.SaveChanges();
 
-                StateLabel.Text = "You have a new appointment with your advisor at "
-                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
+               
 
-
-                MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your advisor on"
-                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
+                
             }
             // show data in the GridView
             GridView1.DataBind();

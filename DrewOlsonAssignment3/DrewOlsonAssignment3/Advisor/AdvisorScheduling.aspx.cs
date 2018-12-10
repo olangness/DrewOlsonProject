@@ -35,10 +35,9 @@ namespace DrewOlsonAssignment3.Advisor
 
 
 
-
+                string proposedDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
                 var tbl = (from x in dbcon.AppointmentTables
-                           where x.AppointmentDate.Equals(Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")))
-                           && x.AppointmentTime.Equals(TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue)
+                           where x.AppointmentDate.Equals(proposedDate)
                            select x);
                 if (tbl.Count() == 0)
                 {
@@ -48,11 +47,11 @@ namespace DrewOlsonAssignment3.Advisor
                     Label1.Text = "Choose a different time.";
 
                 Label1.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
-                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
+                     + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue + ". Reason: " + TextBox3.Text;
 
 
                 MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
-                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue);
+                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue) + ". Reason: " + TextBox3.Text;
 
                 dbcon.SaveChanges();
             }
