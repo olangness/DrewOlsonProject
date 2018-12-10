@@ -19,7 +19,6 @@ namespace DrewOlsonAssignment3
 
         public static string CreateMessage(string username, string sbjt, string msg)
         {
-
             MailMessage mail = new MailMessage("ndsuadvisingalert@gmail.com", username);
             SmtpClient client = new SmtpClient();
 
