@@ -27,7 +27,7 @@ namespace DrewOlsonAssignment3.Advisor
 
                 //make new table and add it to the real database
                 AppointmentTable table = new AppointmentTable();
-                table.StudentUserName = student.StudentUserName;
+                table.StudentUserName = TextBox4.Text;
                 table.AdvisorUserName = student.StudentAdvisorUserName;
                 table.AppointmentReason = TextBox3.Text;
                 table.AppointmentDate = Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" "));
