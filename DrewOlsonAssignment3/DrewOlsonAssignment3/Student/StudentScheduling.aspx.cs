@@ -44,9 +44,12 @@ namespace DrewOlsonAssignment3.Student
                     dbcon.AppointmentTables.Add(table);
                 }
                 else
-                    Label1.Text = "Choose a different time.";
+                    StateLabel.Text = "Choose a different time.";
                 
                 dbcon.SaveChanges();
+
+                StateLabel.Text = "You have a new appointment with your student " + student.StudentFirstName + " " + student.StudentLastName + " at "
+                    + Calendar1.SelectedDate.ToString().Substring(0, Calendar1.SelectedDate.ToString().IndexOf(" ")) + " at " + TextBox1.Text + ":" + TextBox2.Text + " " + DropDownList1.SelectedValue;
 
 
                 MailSender.CreateMessage(Session["UserName"] + "@ndsu.edu", "New appointment added", "You have a new appointment with your advisor on"
