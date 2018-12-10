@@ -47,7 +47,7 @@ namespace DrewOlsonAssignment3
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("https://bb.ndsu.nodak.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_2_1");
+            Response.Redirect("https://www.ndsu.edu/its/email_services/");
         }
     }
 }
