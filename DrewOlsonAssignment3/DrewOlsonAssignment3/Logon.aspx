@@ -11,7 +11,7 @@
             <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/RedirectPage.aspx" OnAuthenticate="Login1_Authenticate">
             </asp:Login>
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
             <br />
             <br />
         </td>

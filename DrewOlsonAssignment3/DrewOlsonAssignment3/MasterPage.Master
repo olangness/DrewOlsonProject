@@ -15,6 +15,16 @@
             font-size: x-large;
             width: 403px;
         }
+        .newStyle1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .newStyle2 {
+            font-family: "Bahnschrift SemiBold";
+        }
+        .auto-style3 {
+            font-family: "Bahnschrift SemiBold";
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -26,15 +36,16 @@
         <table style="width:100%;">
             <tr>
                 <td class="auto-style1">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/xt0x599W_400x400.jpg" Height="254px" Width="287px" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/xt0x599W_400x400.jpg" Height="254px" Width="293px" />
                 </td>
-                <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Advisor Scheduling Service</td>
+                <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style3"><strong>Advisor Scheduling Service</strong></span></td>
                 <td>
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Home" />
 &nbsp;&nbsp;
                     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Schedule Meeting" Width="120px" />
+                    &nbsp;
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/Logon.aspx" />
 &nbsp;&nbsp;
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logon.aspx">Login</asp:HyperLink>
                     <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Email" />
                 </td>
             </tr>
