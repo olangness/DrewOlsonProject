@@ -67,7 +67,10 @@
         <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged" Width="1177px"></asp:TextBox>
     </p>
     <p>
-        &nbsp;</p>
+        Enter username (first.last) of desired student:</p>
+    <p>
+        <asp:TextBox ID="TextBox4" runat="server" Width="1174px"></asp:TextBox>
+    </p>
     <p>
         Time: (Appointments last 30 minutes)</p>
     <p>
